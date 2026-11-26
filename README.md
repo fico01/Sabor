@@ -1,17 +1,22 @@
-# projetindoscria
+# Sabôr 🍲
 
-A new Flutter project.
+Aplicativo mobile desenvolvido em Flutter para exploração, pesquisa e gerenciamento de receitas culinárias utilizando a API pública DummyJSON.
 
-## Getting Started
+## Funcionalidades
 
-This project is a starting point for a Flutter application.
+- **Explorar Receitas:** Listagem inicial carregada diretamente da API com foto, tempo de preparo e dificuldade.
+- **Pesquisa:** Busca de receitas pelo nome com validação de campo vazio e tratamento para resultados não encontrados.
+- **Detalhes da Receita:** Exibição completa de ingredientes, modo de preparo passo a passo, porções, avaliação e categoria.
+- **Favoritos:** Salvamento e remoção de receitas favoritas durante a sessão, acessível tanto nos cards quanto na aba dedicada.
+- **Easter Egg:** Popup secreto ativado ao tocar 3 vezes seguidas no logotipo **Sabôr** na barra superior.
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologias Utilizadas
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- **Flutter & Dart**
+- **Pacote `http`:** Consumo de dados assíncronos via REST API (`https://dummyjson.com/recipes`).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como Executar
+
+1. Clone o repositório:
+   ```bash
+   git clone <https://github.com/fico01/Sabor.git>
