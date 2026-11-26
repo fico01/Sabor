@@ -56,6 +56,8 @@ class _PerfilState extends State<Perfil> {
     setState(() {
       if (valor.trim().isEmpty) {
         _mensagemErro = "Digite o nome de uma receita!";
+      } else if (valor.trim().length < 3) {
+        _mensagemErro = "Informe ao menos 3 caracteres!";
       } else {
         _mensagemErro = null;
       }
@@ -66,10 +68,21 @@ class _PerfilState extends State<Perfil> {
     _validarBusca(_buscaController.text);
     if (_mensagemErro != null) return;
 
+    final termo = _buscaController.text.trim();
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Buscando receitas para: $termo"),
+        duration: const Duration(seconds: 1),
+      ),
+    );
+
+    _buscaController.clear();
+
     await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => ResultadosPesquisa(termoInicial: _buscaController.text.trim()),
+        builder: (_) => ResultadosPesquisa(termoInicial: termo),
       ),
     );
     setState(() {});
